@@ -1,4 +1,4 @@
-import './InputText.css'
+import './InputText.css';
 
 const InputText = (props) => {
   return (
