@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form onRegisteredCollaborator={collaborator => onNewCollaborator(collaborator)} />
+      <Form teams={teams.map(team => team.name)} onRegisteredCollaborator={collaborator => onNewCollaborator(collaborator)} />
       {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor} />)}
     </div>
   );

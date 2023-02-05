@@ -5,15 +5,6 @@ import Select from '../Select';
 import './Form.css';
 
 const Form = (props) => {
-  const teams = [
-    'Programming',
-    'Front-End',
-    'Data Science',
-    'Devops',
-    'Design/UX',
-    'Management'
-  ];
-
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
   const [image, setImage] = useState('');
@@ -36,7 +27,7 @@ const Form = (props) => {
         <InputText required={true} label="Name" placeholder="Digite seu nome" value={name} onChange={value => setName(value)} />
         <InputText required={true} label="Role" placeholder="Digite seu cargo" value={role} onChange={value => setRole(value)} />
         <InputText required={true} label="Image" placeholder="Digite o endereço da imagem" value={image} onChange={value => setImage(value)} />
-        <Select  required={true} label="Team" items={teams} value={team} onChange={value => setTeam(value)} />
+        <Select  required={true} label="Team" items={props.teams} value={team} onChange={value => setTeam(value)} />
         <Button>
           Criar Card
         </Button>
