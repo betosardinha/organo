@@ -4,7 +4,7 @@ import InputText from '../InputText';
 import Select from '../Select';
 import './Form.css';
 
-const Form = () => {
+const Form = (props) => {
   const teams = [
     'Programming',
     'Front-End',
@@ -21,6 +21,12 @@ const Form = () => {
 
   const onSave = (event) => {
     event.preventDefault();
+    props.onRegisteredCollaborator({
+      name,
+      role,
+      image,
+      team
+    });
   };
 
   return (
