@@ -16,3 +16,12 @@
 .footer ul li:last-child {
   margin-right: 0;
 }
+
+@media (max-width: 800px) {
+  .footer {
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}

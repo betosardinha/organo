@@ -33,7 +33,7 @@ const Footer = () => {
 
       <section>
         <p> Desenvolvido por Alberto Sardinha. </p>
-        </section>
+      </section>
     </footer>
   );
 }
