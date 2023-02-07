@@ -1,3 +1,4 @@
+import Translator from '../Translator';
 import FacebookIcon from '../../images/facebook.png';
 import TwitterIcon from '../../images/twitter.png';
 import InstagramIcon from '../../images/instagram.png';
@@ -32,7 +33,7 @@ const Footer = () => {
       </section>
 
       <section>
-        <p> Desenvolvido por Alberto Sardinha. </p>
+        <p> <Translator path='footer.developed_by'/> </p>
       </section>
     </footer>
   );

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Form from './components/Form';
+import LanguageSelector from './components/LanguageSelector';
 import Team from './components/Team';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
+      <LanguageSelector />
       <Form teams={teams.map(team => team.name)} onRegisteredCollaborator={collaborator => onNewCollaborator(collaborator)} />
       {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor} collaborators={collaborators.filter(collaborator => collaborator.team === team.name)} />)}
       <Footer />
