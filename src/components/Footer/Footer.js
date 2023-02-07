@@ -1,3 +1,7 @@
+import FacebookIcon from '../../images/facebook.png';
+import TwitterIcon from '../../images/twitter.png';
+import InstagramIcon from '../../images/instagram.png';
+import Logo from '../../images/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -7,24 +11,24 @@ const Footer = () => {
         <ul>
           <li>
             <a href="facebook.com" target="_blank">
-              <img src="/images/facebook.png" alt="" />
+              <img src={FacebookIcon} alt="" />
             </a>
           </li>
           <li>
             <a href="twitter.com" target="_blank">
-              <img src="/images/twitter.png" alt="" />
+              <img src={TwitterIcon} alt="" />
             </a>
           </li>
           <li>
             <a href="instagram.com" target="_blank">
-              <img src="/images/instagram.png" alt="" />
+              <img src={InstagramIcon} alt="" />
             </a>
           </li>
         </ul>
       </section>
 
       <section>
-        <img src="/images/logo.png" alt="" />
+        <img src={Logo} alt="" />
       </section>
 
       <section>
