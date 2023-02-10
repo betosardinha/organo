@@ -1,4 +1,3 @@
-
 const locale = {
   translations: {
     form: {
@@ -14,9 +13,9 @@ const locale = {
       submitButton: 'Create card',
     },
     footer: {
-      developed_by: 'Developed by Alberto Sardinha'
-    }
-  }
-}
+      developed_by: 'Developed by Alberto Sardinha',
+    },
+  },
+};
 
 export default locale;

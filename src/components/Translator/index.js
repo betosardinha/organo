@@ -1,1 +1,3 @@
-export { default } from './Translator';
+import Translator from './Translator';
+
+export default Translator;

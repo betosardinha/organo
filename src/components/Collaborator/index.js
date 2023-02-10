@@ -1,1 +1,3 @@
-export { default } from './Collaborator';
+import Collaborator from './Collaborator';
+
+export default Collaborator;

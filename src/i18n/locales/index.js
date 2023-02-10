@@ -3,7 +3,7 @@ import enUsTranslations from './en-us';
 
 const translations = {
   'pt-BR': ptBrTranslations,
-  'en-US': enUsTranslations
-}
+  'en-US': enUsTranslations,
+};
 
 export default translations;

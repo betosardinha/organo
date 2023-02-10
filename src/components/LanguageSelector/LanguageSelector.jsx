@@ -1,17 +1,18 @@
-import Flag from '../Flag';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Flag from '../Flag';
 import BrasilFlag from '../../images/brasil-flag.svg';
 import EuaFlag from '../../images/eua-flag.svg';
-import './LanguageSelector.css'
+import './LanguageSelector.css';
 
-const LanguageSelector = () => {
-  const { i18n } = useTranslation()
+function LanguageSelector() {
+  const { i18n } = useTranslation();
 
   function handleChangeLanguage(language) {
-    i18n.changeLanguage(language)
+    i18n.changeLanguage(language);
   }
 
-  const selectedLanguage = i18n.language
+  const selectedLanguage = i18n.language;
 
   return (
     <div className="flags-container">
@@ -26,7 +27,7 @@ const LanguageSelector = () => {
         onClick={() => handleChangeLanguage('en-US')}
       />
     </div>
-  )
+  );
 }
 
 export default LanguageSelector;

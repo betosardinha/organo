@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Form from './components/Form';
@@ -41,20 +41,31 @@ function App() {
       name: 'Management',
       primaryColor: '#FF8A29',
       secondaryColor: '#FFEEDF',
-    }
+    },
   ];
   const [collaborators, setCollaborators] = useState([]);
 
   const onNewCollaborator = (collaborator) => {
     setCollaborators([...collaborators, collaborator]);
-  }
+  };
 
   return (
     <div className="App">
       <Banner />
       <LanguageSelector />
-      <Form teams={teams.map(team => team.name)} onRegisteredCollaborator={collaborator => onNewCollaborator(collaborator)} />
-      {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor} collaborators={collaborators.filter(collaborator => collaborator.team === team.name)} />)}
+      <Form
+        teams={teams.map((team) => team.name)}
+        onRegisteredCollaborator={(collaborator) => onNewCollaborator(collaborator)}
+      />
+      {teams.map((team) => (
+        <Team
+          key={team.name}
+          name={team.name}
+          primaryColor={team.primaryColor}
+          secondaryColor={team.secondaryColor}
+          collaborators={collaborators.filter((collaborator) => collaborator.team === team.name)}
+        />
+      ))}
       <Footer />
     </div>
   );

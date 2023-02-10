@@ -1,4 +1,3 @@
-
 const locale = {
   translations: {
     form: {
@@ -11,12 +10,12 @@ const locale = {
       inputImagePlaceholder: 'Digite o endereço da imagem',
       inputTeamTitle: 'Time',
       inputTeamPlaceholder: 'Escolha o time',
-      submitButton: 'Criar cartão'
+      submitButton: 'Criar cartão',
     },
     footer: {
-      developed_by: 'Desenvolvido por Alberto Sardinha'
-    }
-  }
-}
+      developed_by: 'Desenvolvido por Alberto Sardinha',
+    },
+  },
+};
 
 export default locale;

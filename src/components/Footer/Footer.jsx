@@ -1,3 +1,4 @@
+import React from 'react';
 import Translator from '../Translator';
 import FacebookIcon from '../../images/facebook.png';
 import TwitterIcon from '../../images/twitter.png';
@@ -5,9 +6,9 @@ import InstagramIcon from '../../images/instagram.png';
 import Logo from '../../images/logo.png';
 import './Footer.css';
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer className='footer'>
+    <footer className="footer">
       <section>
         <ul>
           <li>
@@ -33,7 +34,9 @@ const Footer = () => {
       </section>
 
       <section>
-        <p> <Translator path='footer.developed_by'/> </p>
+        <p>
+          <Translator path="footer.developed_by" />
+        </p>
       </section>
     </footer>
   );

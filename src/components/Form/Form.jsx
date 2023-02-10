@@ -1,11 +1,12 @@
-import { useTranslation } from 'react-i18next'
-import { useState } from 'react';
+import { React, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import PropTypes, { string } from 'prop-types';
 import Button from '../Button';
 import InputText from '../InputText';
 import Select from '../Select';
 import './Form.css';
 
-const Form = (props) => {
+function Form({ teams, onRegisteredCollaborator }) {
   const { t } = useTranslation();
 
   const [name, setName] = useState('');
@@ -15,11 +16,11 @@ const Form = (props) => {
 
   const onSave = (event) => {
     event.preventDefault();
-    props.onRegisteredCollaborator({
+    onRegisteredCollaborator({
       name,
       role,
       image,
-      team
+      team,
     });
     setName('');
     setRole('');
@@ -28,34 +29,34 @@ const Form = (props) => {
   };
 
   return (
-    <section className='form'>
+    <section className="form">
       <form onSubmit={onSave}>
         <h2>{t('form.title')}</h2>
         <InputText
-          required={true}
+          required
           label={t('form.inputNameTitle')}
           placeholder={t('form.inputNamePlaceholder')}
           value={name}
-          onChange={value => setName(value)}
+          onChange={(value) => setName(value)}
         />
 
         <InputText
-          required={true}
+          required
           label={t('form.inputRoleTitle')}
           placeholder={t('form.inputRolePlaceholder')}
           value={role}
-          onChange={value => setRole(value)}
+          onChange={(value) => setRole(value)}
         />
 
         <InputText
-          required={true}
+          required
           label={t('form.inputImageTitle')}
           placeholder={t('form.inputImagePlaceholder')}
           value={image}
-          onChange={value => setImage(value)}
+          onChange={(value) => setImage(value)}
         />
 
-        <Select  required={true} label={t('form.inputTeamTitle')} items={props.teams} value={team} onChange={value => setTeam(value)} />
+        <Select required label={t('form.inputTeamTitle')} items={teams} value={team} onChange={(value) => setTeam(value)} />
 
         <Button>
           {t('form.submitButton')}
@@ -64,5 +65,10 @@ const Form = (props) => {
     </section>
   );
 }
+
+Form.propTypes = {
+  teams: PropTypes.arrayOf(string).isRequired,
+  onRegisteredCollaborator: PropTypes.func.isRequired,
+};
 
 export default Form;
