@@ -4,7 +4,7 @@ import './Flag.css';
 
 function Flag({ image, isSelected, onClick }, handleKeyDown) {
   return (
-    <button type="button" onClick={onClick} onKeyDown={handleKeyDown} tabIndex={0} className="flag-button">
+    <button type="button" onClick={onClick} onKeyDown={() => handleKeyDown} tabIndex={0} className="flag-button">
       <img alt="flag" src={image} className={isSelected ? 'flag flag-selected' : 'flag'} />
     </button>
   );
