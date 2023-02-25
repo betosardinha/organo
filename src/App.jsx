@@ -6,7 +6,7 @@ import LanguageSelector from './components/LanguageSelector';
 import Team from './components/Team';
 
 function App() {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: 'Programming',
       primaryColor: '#57C278',
@@ -42,11 +42,23 @@ function App() {
       primaryColor: '#FF8A29',
       secondaryColor: '#FFEEDF',
     },
-  ];
+  ]);
   const [collaborators, setCollaborators] = useState([]);
 
   const onNewCollaborator = (collaborator) => {
     setCollaborators([...collaborators, collaborator]);
+  };
+
+  const onChangeTeamColor = (color, name) => {
+    setTeams(teams.map((team) => {
+      const changedTeam = team;
+
+      if (team.name === name) {
+        changedTeam.primaryColor = color;
+      }
+
+      return changedTeam;
+    }));
   };
 
   return (
@@ -62,6 +74,7 @@ function App() {
           key={team.name}
           team={team}
           collaborators={collaborators.filter((collaborator) => collaborator.team === team.name)}
+          onChangeColor={onChangeTeamColor}
         />
       ))}
       <Footer />
