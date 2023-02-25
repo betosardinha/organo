@@ -1,28 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import './Collaborator.css';
 
 function Collaborator({
-  backgroundColor, name, role, image,
+  collaborator, backgroundColor, onDelete,
 }) {
   return (
     <div className="collaborator">
+      <AiFillCloseCircle className="delete" onClick={onDelete} size={25} />
       <div className="collaborator-header" style={{ backgroundColor }}>
-        <img src={image} alt={name} />
+        <img src={collaborator.image} alt={collaborator.name} />
       </div>
       <div className="collaborator-info">
-        <h4>{name}</h4>
-        <h5>{role}</h5>
+        <h4>{collaborator.name}</h4>
+        <h5>{collaborator.role}</h5>
       </div>
     </div>
   );
 }
 
 Collaborator.propTypes = {
+  collaborator: PropTypes.shape({
+    name: PropTypes.string,
+    role: PropTypes.string,
+    image: PropTypes.string,
+  }).isRequired,
   backgroundColor: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default Collaborator;
