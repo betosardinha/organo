@@ -9,38 +9,31 @@ function App() {
   const [teams, setTeams] = useState([
     {
       name: 'Programming',
-      primaryColor: '#57C278',
-      secondaryColor: '#D9F7E9',
+      color: '#57C278',
     },
     {
       name: 'Front-End',
-      primaryColor: '#82CFFA',
-      secondaryColor: '#E8F8FF',
+      color: '#82CFFA',
     },
     {
       name: 'Data Science',
-      primaryColor: '#A6D157',
-      secondaryColor: '#F0F8E2',
+      color: '#A6D157',
     },
     {
       name: 'Devops',
-      primaryColor: '#E06B69',
-      secondaryColor: '#FDE7E8',
+      color: '#E06B69',
     },
     {
       name: 'Design/UX',
-      primaryColor: '#DB6EBF',
-      secondaryColor: '#FAE9F5',
+      color: '#DB6EBF',
     },
     {
       name: 'Mobile',
-      primaryColor: '#FFBA05',
-      secondaryColor: '#FFF5D9',
+      color: '#FFBA05',
     },
     {
       name: 'Management',
-      primaryColor: '#FF8A29',
-      secondaryColor: '#FFEEDF',
+      color: '#FF8A29',
     },
   ]);
   const [collaborators, setCollaborators] = useState([]);
@@ -54,7 +47,7 @@ function App() {
       const changedTeam = team;
 
       if (team.name === name) {
-        changedTeam.primaryColor = color;
+        changedTeam.color = color;
       }
 
       return changedTeam;
