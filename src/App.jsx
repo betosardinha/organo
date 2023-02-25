@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Form from './components/Form';
@@ -8,30 +9,37 @@ import Team from './components/Team';
 function App() {
   const [teams, setTeams] = useState([
     {
+      id: uuidv4(),
       name: 'Programming',
       color: '#57C278',
     },
     {
+      id: uuidv4(),
       name: 'Front-End',
       color: '#82CFFA',
     },
     {
+      id: uuidv4(),
       name: 'Data Science',
       color: '#A6D157',
     },
     {
+      id: uuidv4(),
       name: 'Devops',
       color: '#E06B69',
     },
     {
+      id: uuidv4(),
       name: 'Design/UX',
       color: '#DB6EBF',
     },
     {
+      id: uuidv4(),
       name: 'Mobile',
       color: '#FFBA05',
     },
     {
+      id: uuidv4(),
       name: 'Management',
       color: '#FF8A29',
     },
@@ -42,11 +50,11 @@ function App() {
     setCollaborators([...collaborators, collaborator]);
   };
 
-  const onChangeTeamColor = (color, name) => {
+  const onChangeTeamColor = (color, id) => {
     setTeams(teams.map((team) => {
       const changedTeam = team;
 
-      if (team.name === name) {
+      if (changedTeam.id === id) {
         changedTeam.color = color;
       }
 
