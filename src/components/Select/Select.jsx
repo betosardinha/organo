@@ -15,7 +15,7 @@ function Select({
       </label>
 
       <select required={required} value={value} onChange={(event) => onChange(event.target.value)}>
-        <option value="" disabled hidden>{t('form.inputTeamPlaceholder')}</option>
+        <option value="" disabled hidden>{t('form.collaborator.inputTeamPlaceholder')}</option>
         {items.map((item) => <option key={item}>{item}</option>)}
       </select>
     </div>
