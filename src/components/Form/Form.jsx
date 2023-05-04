@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes, { string } from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import Button from '../Button';
 import InputText from '../InputText';
 import Select from '../Select';
@@ -16,7 +17,11 @@ function Form({ teams, onRegisteredCollaborator }) {
 
   const onSave = (event) => {
     event.preventDefault();
+
+    const uuid = uuidv4();
+
     onRegisteredCollaborator({
+      uuid,
       name,
       role,
       image,

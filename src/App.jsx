@@ -9,52 +9,57 @@ import Team from './components/Team';
 function App() {
   const [teams, setTeams] = useState([
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Programming',
       color: '#57C278',
     },
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Front-End',
       color: '#82CFFA',
     },
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Data Science',
       color: '#A6D157',
     },
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Devops',
       color: '#E06B69',
     },
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Design/UX',
       color: '#DB6EBF',
     },
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Mobile',
       color: '#FFBA05',
     },
     {
-      id: uuidv4(),
+      uuid: uuidv4(),
       name: 'Management',
       color: '#FF8A29',
     },
   ]);
+
   const [collaborators, setCollaborators] = useState([]);
 
   const onNewCollaborator = (collaborator) => {
     setCollaborators([...collaborators, collaborator]);
   };
 
-  const onChangeTeamColor = (color, id) => {
+  const onDeleteCollaborator = (uuid) => {
+    setCollaborators(collaborators.filter((collaborator) => collaborator.uuid !== uuid));
+  };
+
+  const onChangeTeamColor = (color, uuid) => {
     setTeams(teams.map((team) => {
       const changedTeam = team;
 
-      if (changedTeam.id === id) {
+      if (changedTeam.uuid === uuid) {
         changedTeam.color = color;
       }
 
@@ -76,6 +81,7 @@ function App() {
           team={team}
           collaborators={collaborators.filter((collaborator) => collaborator.team === team.name)}
           onChangeColor={onChangeTeamColor}
+          onDelete={onDeleteCollaborator}
         />
       ))}
       <Footer />

@@ -8,7 +8,11 @@ function Collaborator({
 }) {
   return (
     <div className="collaborator">
-      <AiFillCloseCircle className="delete" onClick={onDelete} size={25} />
+      <AiFillCloseCircle
+        className="delete"
+        size={25}
+        onClick={() => onDelete(collaborator.uuid)}
+      />
       <div className="collaborator-header" style={{ backgroundColor }}>
         <img src={collaborator.image} alt={collaborator.name} />
       </div>
@@ -22,6 +26,7 @@ function Collaborator({
 
 Collaborator.propTypes = {
   collaborator: PropTypes.shape({
+    uuid: PropTypes.string,
     name: PropTypes.string,
     role: PropTypes.string,
     image: PropTypes.string,
