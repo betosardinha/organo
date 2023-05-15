@@ -10,7 +10,7 @@ function Team({
   return (
     collaborators.length > 0 && (
     <section className="team" style={{ backgroundColor: hexToRgba(team.color, '0.6') }}>
-      <input value={team.color} type="color" className="input-color" onChange={(event) => onChangeColor(event.target.value, team.uuid)} />
+      <input value={team.color} type="color" className="team-color" onChange={(event) => onChangeColor(event.target.value, team.uuid)} />
       <h3 style={{ borderColor: team.color }}>{team.name}</h3>
       <div className="collaborators">
         {collaborators.map((collaborator) => (

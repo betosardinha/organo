@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './InputText.css';
+import './Input.css';
 
-function InputText({
-  label, placeholder, value, required, onChange,
+function Input({
+  type, label, placeholder, value, required, onChange,
 }) {
   return (
-    <div className="input-text">
+    <div className={`input input-${type}`}>
       <label htmlFor={label}>
         {label}
       </label>
 
       <input
+        type={type}
         placeholder={placeholder}
         value={value}
         required={required}
@@ -21,7 +22,8 @@ function InputText({
   );
 }
 
-InputText.propTypes = {
+Input.propTypes = {
+  type: PropTypes.string,
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
@@ -29,4 +31,8 @@ InputText.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-export default InputText;
+Input.defaultProps = {
+  type: 'text',
+};
+
+export default Input;

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PropTypes, { string } from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../Button';
-import InputText from '../InputText';
+import Input from '../Input';
 import Select from '../Select';
 import './Form.css';
 
@@ -50,7 +50,7 @@ function Form({ teams, onRegisteredCollaborator, registerTeam }) {
     <section className="form">
       <form onSubmit={onSaveCollaborator}>
         <h2>{t('form.collaborator.title')}</h2>
-        <InputText
+        <Input
           required
           label={t('form.collaborator.inputNameTitle')}
           placeholder={t('form.collaborator.inputNamePlaceholder')}
@@ -58,7 +58,7 @@ function Form({ teams, onRegisteredCollaborator, registerTeam }) {
           onChange={(value) => setName(value)}
         />
 
-        <InputText
+        <Input
           required
           label={t('form.collaborator.inputRoleTitle')}
           placeholder={t('form.collaborator.inputRolePlaceholder')}
@@ -66,7 +66,7 @@ function Form({ teams, onRegisteredCollaborator, registerTeam }) {
           onChange={(value) => setRole(value)}
         />
 
-        <InputText
+        <Input
           required
           label={t('form.collaborator.inputImageTitle')}
           placeholder={t('form.collaborator.inputImagePlaceholder')}
@@ -83,7 +83,7 @@ function Form({ teams, onRegisteredCollaborator, registerTeam }) {
 
       <form onSubmit={onSaveTeam}>
         <h2>{t('form.team.title')}</h2>
-        <InputText
+        <Input
           required
           label={t('form.team.inputNameTitle')}
           placeholder={t('form.team.inputNamePlaceholder')}
@@ -91,8 +91,9 @@ function Form({ teams, onRegisteredCollaborator, registerTeam }) {
           onChange={(value) => setTeamName(value)}
         />
 
-        <InputText
+        <Input
           required
+          type="color"
           label={t('form.team.inputColorTitle')}
           placeholder={t('form.team.inputColorPlaceholder')}
           value={teamColor}
