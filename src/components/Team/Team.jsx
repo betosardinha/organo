@@ -5,7 +5,7 @@ import Collaborator from '../Collaborator';
 import './Team.css';
 
 function Team({
-  team, collaborators, onChangeColor, onDelete,
+  team, collaborators, onChangeColor, onDelete, onFavorite,
 }) {
   return (
     collaborators.length > 0 && (
@@ -19,6 +19,7 @@ function Team({
             collaborator={collaborator}
             backgroundColor={team.color}
             onDelete={onDelete}
+            onFavorite={onFavorite}
           />
         ))}
       </div>
@@ -36,6 +37,7 @@ Team.propTypes = {
   collaborators: PropTypes.arrayOf(Collaborator).isRequired,
   onChangeColor: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
+  onFavorite: PropTypes.func.isRequired,
 };
 
 export default Team;

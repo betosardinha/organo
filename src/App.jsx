@@ -55,6 +55,18 @@ function App() {
     setCollaborators(collaborators.filter((collaborator) => collaborator.uuid !== uuid));
   };
 
+  const onFavoriteCollaborator = (uuid) => {
+    setCollaborators(collaborators.map((collaborator) => {
+      const changedCollaborator = collaborator;
+
+      if (changedCollaborator.uuid === uuid) {
+        changedCollaborator.favorite = !changedCollaborator.favorite;
+      }
+
+      return changedCollaborator;
+    }));
+  };
+
   const onChangeTeamColor = (color, uuid) => {
     setTeams(teams.map((team) => {
       const changedTeam = team;
@@ -87,6 +99,7 @@ function App() {
           collaborators={collaborators.filter((collaborator) => collaborator.team === team.name)}
           onChangeColor={onChangeTeamColor}
           onDelete={onDeleteCollaborator}
+          onFavorite={onFavoriteCollaborator}
         />
       ))}
       <Footer />

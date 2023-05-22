@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import './Collaborator.css';
 
 function Collaborator({
-  collaborator, backgroundColor, onDelete,
+  collaborator, backgroundColor, onDelete, onFavorite,
 }) {
+  const favorite = () => {
+    onFavorite(collaborator.uuid);
+  };
+
   return (
     <div className="collaborator">
       <AiFillCloseCircle
@@ -19,6 +23,13 @@ function Collaborator({
       <div className="collaborator-info">
         <h4>{collaborator.name}</h4>
         <h5>{collaborator.role}</h5>
+        <div className="favorite">
+          {
+            collaborator.favorite
+              ? <AiFillHeart size={25} onClick={favorite} color="#FF0000" />
+              : <AiOutlineHeart size={25} onClick={favorite} />
+          }
+        </div>
       </div>
     </div>
   );
@@ -30,9 +41,11 @@ Collaborator.propTypes = {
     name: PropTypes.string,
     role: PropTypes.string,
     image: PropTypes.string,
+    favorite: PropTypes.bool,
   }).isRequired,
   backgroundColor: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
+  onFavorite: PropTypes.func.isRequired,
 };
 
 export default Collaborator;
