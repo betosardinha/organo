@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Form from './components/Form';
+import FormToggle from './components/FormToggle';
 import LanguageSelector from './components/LanguageSelector';
 import Team from './components/Team';
 
@@ -44,6 +45,12 @@ function App() {
       color: '#FF8A29',
     },
   ]);
+
+  const [showForm, setShowForm] = useState(true);
+
+  const onToggleForm = () => {
+    setShowForm(!showForm);
+  };
 
   const [collaborators, setCollaborators] = useState([]);
 
@@ -87,10 +94,15 @@ function App() {
     <div className="App">
       <Banner />
       <LanguageSelector />
+      <FormToggle
+        isSelected={showForm}
+        onClick={() => onToggleForm()}
+      />
       <Form
         registerTeam={registerTeam}
         teams={teams.map((team) => team.name)}
         onRegisteredCollaborator={(collaborator) => onNewCollaborator(collaborator)}
+        showForm={showForm}
       />
       {teams.map((team) => (
         <Team

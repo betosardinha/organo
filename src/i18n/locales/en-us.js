@@ -2,7 +2,7 @@ const locale = {
   translations: {
     form: {
       collaborator: {
-        title: 'Fill in the inputs to create the collaborator\'s card',
+        title: 'Fill in the collaborator\'s details',
         inputNameTitle: 'Name',
         inputNamePlaceholder: 'Enter the collaborator\'s name',
         inputRoleTitle: 'Role',

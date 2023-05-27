@@ -1,9 +1,13 @@
 .form {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 80px 50px;
+  margin: 80px 280px;
+}
+
+.hideForm {
+  display: none;
 }
 
 .form form {
@@ -12,9 +16,16 @@
   box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
   flex: 1;
   padding: 36px 64px;
+  width: 200px;
 }
 
 .form form h2 {
   font-weight: 400;
   font-size: 32px;
+}
+
+@media (max-width: 1500px) {
+  .form {
+    margin: 80px 0px;
+  }
 }

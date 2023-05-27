@@ -7,7 +7,9 @@ import Input from '../Input';
 import Select from '../Select';
 import './Form.css';
 
-function Form({ teams, onRegisteredCollaborator, registerTeam }) {
+function Form({
+  teams, onRegisteredCollaborator, registerTeam, showForm,
+}) {
   const { t } = useTranslation();
 
   const [name, setName] = useState('');
@@ -47,7 +49,7 @@ function Form({ teams, onRegisteredCollaborator, registerTeam }) {
   };
 
   return (
-    <section className="form">
+    <section className={showForm ? 'form' : 'form hideForm'}>
       <form onSubmit={onSaveCollaborator}>
         <h2>{t('form.collaborator.title')}</h2>
         <Input
@@ -112,6 +114,7 @@ Form.propTypes = {
   teams: PropTypes.arrayOf(string).isRequired,
   onRegisteredCollaborator: PropTypes.func.isRequired,
   registerTeam: PropTypes.func.isRequired,
+  showForm: PropTypes.bool.isRequired,
 };
 
 export default Form;

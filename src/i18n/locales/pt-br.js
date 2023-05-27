@@ -2,7 +2,7 @@ const locale = {
   translations: {
     form: {
       collaborator: {
-        title: 'Preencha os dados para criar o card do colaborador',
+        title: 'Preencha os dados do colaborador',
         inputNameTitle: 'Nome',
         inputNamePlaceholder: 'Digite o nome do colaborador',
         inputRoleTitle: 'Cargo',
