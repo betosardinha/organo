@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Img } from 'react-image';
 import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import './Collaborator.css';
+import BaseAvatar from '../../images/base-avatar.jpg';
 
 function Collaborator({
   collaborator, backgroundColor, onDelete, onFavorite,
@@ -18,7 +20,7 @@ function Collaborator({
         onClick={() => onDelete(collaborator.uuid)}
       />
       <div className="collaborator-header" style={{ backgroundColor }}>
-        <img src={collaborator.image} alt={collaborator.name} />
+        <Img src={[collaborator.image, BaseAvatar]} alt={collaborator.name} />
       </div>
       <div className="collaborator-info">
         <h4>{collaborator.name}</h4>
