@@ -17,7 +17,7 @@ function Form({
   const [image, setImage] = useState('');
   const [team, setTeam] = useState('');
   const [teamName, setTeamName] = useState('');
-  const [teamColor, setTeamColor] = useState('');
+  const [teamColor, setTeamColor] = useState('#000000');
 
   const onSaveCollaborator = (event) => {
     event.preventDefault();
@@ -45,7 +45,7 @@ function Form({
       color: teamColor,
     });
     setTeamName('');
-    setTeamColor('');
+    setTeamColor('#000000');
   };
 
   return (
