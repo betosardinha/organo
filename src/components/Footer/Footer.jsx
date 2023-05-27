@@ -1,9 +1,9 @@
 import React from 'react';
 import Translator from '../Translator';
-import FacebookIcon from '../../images/facebook.png';
-import TwitterIcon from '../../images/twitter.png';
-import InstagramIcon from '../../images/instagram.png';
-import Logo from '../../images/logo.png';
+import FacebookIcon from '../../images/facebook.svg';
+import TwitterIcon from '../../images/twitter.svg';
+import InstagramIcon from '../../images/instagram.svg';
+import LogoType from '../../images/logo-type.svg';
 import './Footer.css';
 
 function Footer() {
@@ -30,7 +30,7 @@ function Footer() {
       </section>
 
       <section>
-        <img src={Logo} alt="" />
+        <img src={LogoType} alt="" />
       </section>
 
       <section>
