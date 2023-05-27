@@ -55,7 +55,7 @@ function App() {
   const [collaborators, setCollaborators] = useState([]);
 
   const onNewCollaborator = (collaborator) => {
-    setCollaborators([...collaborators, { ...collaborator, id: uuidv4() }]);
+    setCollaborators([...collaborators, { ...collaborator, uuid: uuidv4() }]);
   };
 
   const onDeleteCollaborator = (uuid) => {
