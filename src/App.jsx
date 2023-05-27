@@ -55,7 +55,7 @@ function App() {
   const [collaborators, setCollaborators] = useState([]);
 
   const onNewCollaborator = (collaborator) => {
-    setCollaborators([...collaborators, collaborator]);
+    setCollaborators([...collaborators, { ...collaborator, id: uuidv4() }]);
   };
 
   const onDeleteCollaborator = (uuid) => {
@@ -101,7 +101,7 @@ function App() {
       <Form
         registerTeam={registerTeam}
         teams={teams.map((team) => team.name)}
-        onRegisteredCollaborator={(collaborator) => onNewCollaborator(collaborator)}
+        onRegisteredCollaborator={onNewCollaborator}
         showForm={showForm}
       />
       {teams.map((team) => (
