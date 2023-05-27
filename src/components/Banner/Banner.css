@@ -4,5 +4,11 @@
 }
 
 .banner img {
-  max-width: 100%;
+  max-width: 70%;
+}
+
+@media (max-width: 800px) {
+  .banner img {
+    max-width: 100%;
+  }
 }
