@@ -3,7 +3,7 @@ import Translator from '../Translator';
 import FacebookIcon from '../../images/facebook.svg';
 import TwitterIcon from '../../images/twitter.svg';
 import InstagramIcon from '../../images/instagram.svg';
-import LogoType from '../../images/logo-type.svg';
+import LogoType from '../../images/logo-type-white.svg';
 import './Footer.css';
 
 function Footer() {
